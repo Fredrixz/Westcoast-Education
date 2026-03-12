@@ -20,8 +20,8 @@ En webbapplikation för WestCoast Education som hanterar kurser, bokningar och a
 ### 1. Klona repot
 
 ```bash
-git clone https://github.com/DITT-NAMN/westcoast-education.git
-cd westcoast-education
+git clone https://github.com/Fredrixz/Westcoast-Education.git
+cd Westcoast-Education
 ```
 
 ### 2. Konfigurera API
