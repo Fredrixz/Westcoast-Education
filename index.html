@@ -1,0 +1,112 @@
+<!DOCTYPE html>
+<html lang="sv">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>WestCoast Education – Kurser</title>
+  <link rel="stylesheet" href="src/css/style.css" />
+</head>
+<body>
+
+  <!-- HEADER -->
+  <header>
+    <nav class="container">
+      <a href="index.html" class="nav-logo">
+        <span>WestCoast</span> Education
+      </a>
+      <ul class="nav-links">
+        <li><a href="index.html" class="active">Kurser</a></li>
+        <li><a href="index.html#popular">Populära</a></li>
+      </ul>
+      <div class="nav-actions">
+        <a href="login.html" class="btn-nav btn-nav-outline">Logga in</a>
+        <a href="login.html?tab=register" class="btn-nav btn-nav-primary">Registrera</a>
+      </div>
+      <button class="hamburger" aria-label="Meny">
+        <span></span><span></span><span></span>
+      </button>
+    </nav>
+  </header>
+
+  <main>
+    <!-- HERO -->
+    <section class="hero">
+      <div class="container">
+        <h1>Utbildningar för<br><span>framtidens IT-proffs</span></h1>
+        <p>Vi erbjuder klassrumsutbildningar, distanskurser och on-demand-kurser inom webbutveckling, programmering och design.</p>
+        <div class="hero-actions">
+          <a href="#courses" class="btn btn-accent">Se alla kurser</a>
+          <a href="#popular" class="btn btn-outline">Populära kurser</a>
+        </div>
+      </div>
+    </section>
+
+    <!-- FILTER & COURSES -->
+    <div class="filter-bar" id="courses">
+      <div class="container filter-bar-inner">
+        <input type="search" id="search-input" placeholder="Sök kurs…" aria-label="Sök kurs" />
+        <div class="filter-chips" id="category-filters">
+          <button class="chip active" data-category="all">Alla</button>
+        </div>
+      </div>
+    </div>
+
+    <section class="section">
+      <div class="container">
+        <div class="section-header-row">
+          <div>
+            <h2>Alla kurser</h2>
+            <p id="course-count"></p>
+          </div>
+        </div>
+        <div class="course-grid" id="course-grid">
+          <div class="loading"><div class="spinner"></div></div>
+        </div>
+      </div>
+    </section>
+
+    <!-- POPULAR COURSES -->
+    <section class="section popular-section" id="popular">
+      <div class="container">
+        <div class="section-header">
+          <h2>⭐ Populära kurser</h2>
+          <p>Kurser med högst betyg och flest deltagare just nu.</p>
+        </div>
+        <div class="course-grid" id="popular-grid">
+          <div class="loading"><div class="spinner"></div></div>
+        </div>
+      </div>
+    </section>
+  </main>
+
+  <!-- FOOTER -->
+  <footer>
+    <div class="container">
+      <div class="footer-grid">
+        <div class="footer-brand">
+          <h3><span>WestCoast</span> Education</h3>
+          <p>Vi tillhandahåller tekniska IT-utbildningar sedan 1986. Klassrum, distans och on-demand – vi möter dig där du är.</p>
+        </div>
+        <div class="footer-col">
+          <h4>Kurser</h4>
+          <a href="#">Webb</a>
+          <a href="#">Backend</a>
+          <a href="#">Design</a>
+          <a href="#">Programmering</a>
+        </div>
+        <div class="footer-col">
+          <h4>Om oss</h4>
+          <a href="#">Kontakt</a>
+          <a href="#">Villkor</a>
+          <a href="#">Integritetspolicy</a>
+        </div>
+      </div>
+      <div class="footer-bottom">
+        <p>© 2026 WestCoast Education. Alla rättigheter förbehållna.</p>
+      </div>
+    </div>
+  </footer>
+
+  <script type="module" src="src/index.js"></script>
+</body>
+</html>

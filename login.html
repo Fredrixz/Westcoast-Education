@@ -1,0 +1,80 @@
+<!DOCTYPE html>
+<html lang="sv">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Logga in – WestCoast Education</title>
+  <link rel="stylesheet" href="src/css/style.css" />
+</head>
+<body class="auth-page">
+
+  <div class="auth-card">
+    <div class="auth-logo">
+      <h1><span>WestCoast</span> Education</h1>
+      <p>Logga in eller skapa ett konto för att boka kurser</p>
+    </div>
+
+    <!-- TABS -->
+    <div class="auth-tabs">
+      <button class="auth-tab active" id="tab-login">Logga in</button>
+      <button class="auth-tab" id="tab-register">Registrera</button>
+    </div>
+
+    <!-- LOGIN FORM -->
+    <form id="login-form" novalidate>
+      <div class="form-group">
+        <label for="login-email">E-postadress</label>
+        <input type="email" id="login-email" placeholder="anna@exempel.se" autocomplete="email" />
+        <p class="form-error" id="login-email-err"></p>
+      </div>
+      <div class="form-group">
+        <label for="login-password">Lösenord</label>
+        <input type="password" id="login-password" placeholder="••••••••" autocomplete="current-password" />
+        <p class="form-error" id="login-password-err"></p>
+      </div>
+      <p class="form-error" id="login-general-err" style="margin-bottom:0.75rem"></p>
+      <button type="submit" class="btn btn-primary btn-full" id="login-btn">Logga in</button>
+      <div class="form-divider">eller</div>
+      <p style="text-align:center;font-size:0.875rem;color:var(--text-light)">
+        Inget konto? <button type="button" id="switch-to-register" style="background:none;border:none;color:var(--primary);cursor:pointer;font-weight:600">Registrera dig</button>
+      </p>
+    </form>
+
+    <!-- REGISTER FORM -->
+    <form id="register-form" novalidate style="display:none">
+      <div class="form-group">
+        <label for="reg-name">Fullständigt namn *</label>
+        <input type="text" id="reg-name" placeholder="Anna Andersson" autocomplete="name" />
+        <p class="form-error" id="reg-name-err"></p>
+      </div>
+      <div class="form-group">
+        <label for="reg-email">E-postadress *</label>
+        <input type="email" id="reg-email" placeholder="anna@exempel.se" autocomplete="email" />
+        <p class="form-error" id="reg-email-err"></p>
+      </div>
+      <div class="form-group">
+        <label for="reg-mobile">Mobilnummer *</label>
+        <input type="tel" id="reg-mobile" placeholder="070 123 45 67" autocomplete="tel" />
+        <p class="form-error" id="reg-mobile-err"></p>
+      </div>
+      <div class="form-group">
+        <label for="reg-address">Faktureringsadress</label>
+        <input type="text" id="reg-address" placeholder="Gatan 1, 41234 Göteborg" autocomplete="street-address" />
+      </div>
+      <div class="form-group">
+        <label for="reg-password">Lösenord *</label>
+        <input type="password" id="reg-password" placeholder="Minst 6 tecken" autocomplete="new-password" />
+        <p class="form-error" id="reg-password-err"></p>
+      </div>
+      <p class="form-error" id="reg-general-err" style="margin-bottom:0.75rem"></p>
+      <button type="submit" class="btn btn-primary btn-full" id="register-btn">Skapa konto</button>
+      <div class="form-divider">eller</div>
+      <p style="text-align:center;font-size:0.875rem;color:var(--text-light)">
+        Har konto? <button type="button" id="switch-to-login" style="background:none;border:none;color:var(--primary);cursor:pointer;font-weight:600">Logga in</button>
+      </p>
+    </form>
+  </div>
+
+  <script type="module" src="src/login.js"></script>
+</body>
+</html>

@@ -1,0 +1,130 @@
+<!DOCTYPE html>
+<html lang="sv">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Admin – WestCoast Education</title>
+  <link rel="stylesheet" href="src/css/style.css" />
+</head>
+<body>
+
+  <!-- HEADER -->
+  <header>
+    <nav class="container">
+      <a href="index.html" class="nav-logo">
+        <span>WestCoast</span> Education
+      </a>
+      <ul class="nav-links">
+        <li><a href="index.html">Kurser</a></li>
+        <li><a href="admin.html" class="active">Admin</a></li>
+      </ul>
+      <div class="nav-actions">
+        <a href="index.html" class="btn-nav btn-nav-outline">← Till sajten</a>
+      </div>
+      <button class="hamburger" aria-label="Meny">
+        <span></span><span></span><span></span>
+      </button>
+    </nav>
+  </header>
+
+  <main>
+    <div class="admin-layout">
+
+      <!-- SIDEBAR -->
+      <aside class="admin-sidebar">
+        <h2>Navigation</h2>
+        <nav class="admin-nav">
+          <a href="#add-course" class="active" data-view="add-course">➕ Lägg till kurs</a>
+          <a href="#bookings" data-view="bookings">📋 Bokningar</a>
+        </nav>
+      </aside>
+
+      <!-- CONTENT -->
+      <div class="admin-content">
+
+        <!-- ADD COURSE VIEW -->
+        <div id="view-add-course">
+          <h1>Lägg till kurs</h1>
+          <p>Fyll i formuläret nedan för att lägga till en ny kurs i systemet.</p>
+
+          <div class="add-course-card">
+            <form id="add-course-form" novalidate>
+              <div class="form-group">
+                <label for="ac-title">Kurstitel *</label>
+                <input type="text" id="ac-title" placeholder="T.ex. JavaScript Grunder" />
+                <p class="form-error" id="err-ac-title"></p>
+              </div>
+              <div class="form-group">
+                <label for="ac-number">Kursnummer *</label>
+                <input type="text" id="ac-number" placeholder="T.ex. JS-101" />
+                <p class="form-error" id="err-ac-number"></p>
+              </div>
+              <div class="form-group">
+                <label for="ac-days">Antal dagar *</label>
+                <input type="number" id="ac-days" placeholder="5" min="1" max="30" />
+                <p class="form-error" id="err-ac-days"></p>
+              </div>
+              <div class="form-group">
+                <label for="ac-cost">Kostnad (SEK) *</label>
+                <input type="number" id="ac-cost" placeholder="12500" min="0" step="100" />
+                <p class="form-error" id="err-ac-cost"></p>
+              </div>
+              <div class="form-group">
+                <label for="ac-category">Kategori</label>
+                <select id="ac-category">
+                  <option value="Webb">Webb</option>
+                  <option value="Backend">Backend</option>
+                  <option value="Design">Design</option>
+                  <option value="Programmering">Programmering</option>
+                  <option value="Verktyg">Verktyg</option>
+                </select>
+              </div>
+              <div class="form-group">
+                <label for="ac-description">Kursbeskrivning</label>
+                <textarea id="ac-description" rows="3" placeholder="Beskriv kursens innehåll…"></textarea>
+              </div>
+              <div class="form-group">
+                <label for="ac-image">Bild-URL</label>
+                <input type="url" id="ac-image" placeholder="https://..." />
+              </div>
+              <div class="form-group">
+                <label for="ac-instructor">Lärare</label>
+                <input type="text" id="ac-instructor" placeholder="För- och efternamn" />
+              </div>
+              <div class="form-group">
+                <label>Kursformat</label>
+                <div style="display:flex;gap:1.5rem;margin-top:0.3rem">
+                  <label style="display:flex;align-items:center;gap:0.4rem;font-weight:400;cursor:pointer">
+                    <input type="checkbox" id="ac-classroom" checked /> Klassrum
+                  </label>
+                  <label style="display:flex;align-items:center;gap:0.4rem;font-weight:400;cursor:pointer">
+                    <input type="checkbox" id="ac-distance" /> Distans
+                  </label>
+                </div>
+              </div>
+              <div class="form-group">
+                <label for="ac-date">Startdatum</label>
+                <input type="date" id="ac-date" />
+              </div>
+              <button type="submit" class="btn btn-primary" id="add-course-btn">Lägg till kurs</button>
+            </form>
+          </div>
+        </div>
+
+        <!-- BOOKINGS VIEW -->
+        <div id="view-bookings" style="display:none">
+          <h1>Bokningar</h1>
+          <p>Översikt över alla bokningar per kurs.</p>
+
+          <div id="bookings-container">
+            <div class="loading"><div class="spinner"></div></div>
+          </div>
+        </div>
+
+      </div>
+    </div>
+  </main>
+
+  <script type="module" src="src/admin.js"></script>
+</body>
+</html>
