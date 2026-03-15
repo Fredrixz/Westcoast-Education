@@ -1,72 +1,15 @@
-# WestCoast Education
+# WestCoast Education – Inlämning 1
 
-En webbapplikation för WestCoast Education som hanterar kurser, bokningar och administration.
-
-## Funktioner
-
-- **Startsida** – Lista och filtrera kurser efter kategori och sökord
-- **Kursdetaljer** – Visa kursinformation och boka kurs (kräver inloggning)
-- **Login / Registrering** – Skapa konto och logga in
-- **Adminpanel** – Lägg till kurser och se bokningar per kurs (kräver inloggning)
+Skolprojekt för WestCoast Education. En webbapp där man kan se kurser, boka och administrera.
 
 ## Teknik
 
 - Vanilla JavaScript med ES6-moduler
-- RestDB som REST API (molndatabas)
-- Modern responsiv CSS
+- RestDB som REST API
+- HTML och CSS
 
-## Kom igång
 
-### 1. Klona repot
+## API
 
-```bash
-git clone https://github.com/Fredrixz/Westcoast-Education.git
-cd Westcoast-Education
-```
-
-### 2. Konfigurera API
-
-Kopiera exempelfilen och fyll i dina egna RestDB-uppgifter:
-
-```bash
-cp src/config.example.js src/config.js
-```
-
-Öppna `src/config.js` och fyll i:
-
-```js
-export const API_URL = 'https://din-databas.restdb.io/rest';
-export const API_KEY = 'din-api-nyckel';
-```
-
-### 3. Öppna i webbläsaren
-
-Öppna `index.html` via en lokal server, t.ex. **Live Server** i VSCode.
-
-## Struktur
-
-```
-/
-├── index.html        # Startsida
-├── course.html       # Kursdetaljer + bokning
-├── login.html        # Login / registrering
-├── admin.html        # Adminpanel
-└── src/
-    ├── config.js     # API-konfiguration (ignoreras av git)
-    ├── index.js
-    ├── course.js
-    ├── login.js
-    ├── admin.js
-    ├── css/
-    │   └── style.css
-    └── modules/
-        ├── api.js       # Fetch-wrapper mot RestDB
-        ├── auth.js      # Autentisering (localStorage)
-        ├── courses.js   # Kurslogik
-        ├── bookings.js  # Bokningslogik
-        └── ui.js        # Gemensamma UI-hjälpfunktioner
-```
-
-## Notering
-
-Lösenord lagras i klartext i databasen. I en produktionsmiljö skulle man använda bcrypt eller liknande för lösenordshashning.
+Projektet använder RestDB. API-nyckeln ligger i `src/config.js` (ignoreras av git).
+Se `src/config.example.js` för hur filen ska se ut.
